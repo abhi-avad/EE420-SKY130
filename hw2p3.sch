@@ -5,96 +5,86 @@ K {}
 V {}
 S {}
 E {}
-N 120 -190 140 -190 {
-lab=VGS1}
-N 180 -240 180 -220 {
-lab=VGS1}
-N 120 -240 120 -190 {
-lab=VGS1}
-N 120 -240 180 -240 {
-lab=VGS1}
-N 100 -190 120 -190 {
-lab=VGS1}
-N 180 -160 180 -140 {
-lab=GND}
-N 180 -310 180 -240 {
-lab=VGS1}
-N 180 -390 180 -370 {
+B 2 370 30 860 430 {flags=graph
+y1=-0
+y2=8.1e-05
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=4e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="\\"Id4_pushed;i(VA3) -1 *\\"
+\\"Id2_pulled;i(VA1)\\"
+\\"Id2;i(va2)\\"
+\\"Id4;i(va4)\\""
+color="7 7 8 10"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 880 30 1370 430 {flags=graph
+y1=0.039
+y2=5.2
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=4e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="vds2
+vd4
+\\"Vov_m2;net1 0.8 -\\"
+\\"Vov_m4;net3 0.8 +\\""
+color="8 10 8 10"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+N 80 -150 160 -150 {
 lab=#net1}
-N 180 -390 310 -390 {
-lab=#net1}
-N 310 -390 310 -300 {
-lab=#net1}
-N 480 -190 500 -190 {
-lab=#net2}
-N 540 -240 540 -220 {
+N 200 -230 200 -180 {
 lab=VDS2}
-N 420 -190 480 -190 {
+N 200 -340 200 -290 {
 lab=#net2}
-N 540 -160 540 -140 {
-lab=GND}
-N 540 -280 540 -240 {
-lab=VDS2}
-N 540 -390 540 -340 {
-lab=#net3}
-N 540 -390 670 -390 {
-lab=#net3}
-N 670 -390 670 -300 {
-lab=#net3}
-N 880 -330 880 -300 {
-lab=#net4}
-N 880 -140 880 -120 {
-lab=GND}
-N 880 -240 880 -200 {
-lab=VD3}
-N 820 -270 840 -270 {
-lab=VD3}
-N 820 -270 820 -220 {
-lab=VD3}
-N 820 -220 880 -220 {
-lab=VD3}
-N 880 -360 880 -330 {
-lab=#net4}
-N 880 -360 970 -360 {
-lab=#net4}
-N 970 -360 970 -340 {
-lab=#net4}
-N 1190 -330 1190 -300 {
-lab=#net5}
-N 1190 -140 1190 -120 {
-lab=GND}
-N 1190 -240 1190 -200 {
+N 200 -340 330 -340 {
+lab=#net2}
+N 330 -340 330 -250 {
+lab=#net2}
+N 570 -200 570 -160 {
 lab=VD4}
-N 1080 -270 1150 -270 {
-lab=#net6}
-N 1190 -360 1190 -330 {
-lab=#net5}
-N 1190 -360 1280 -360 {
-lab=#net5}
-N 1280 -360 1280 -340 {
-lab=#net5}
-N 180 -190 180 -160 {
-lab=GND}
-N 540 -190 540 -160 {
-lab=GND}
-N 880 -300 880 -270 {
+N 460 -230 530 -230 {
+lab=#net3}
+N 200 -150 200 -100 {
 lab=#net4}
-N 1190 -300 1190 -270 {
-lab=#net5}
+N 330 -340 570 -340 {
+lab=#net2}
+N 570 -340 570 -230 {
+lab=#net2}
+N 730 -190 730 -160 {
+lab=VDS2}
+N 820 -190 820 -160 {
+lab=VD4}
 C {devices/code_shown.sym} 30 50 0 0 {name="SIM COMMANDS" only_toplevel=false value="
 **.include cmosedu_models.txt
 .control
-op
+dc I0 0 40u 0.1u
 save all
-write hw1p2.raw
+write hw2p3.raw
 .endc
 "}
-C {devices/nmos4.sym} 160 -190 0 0 {name=M1 model=N_1u w=20u l=2u del=0 m=1}
-C {devices/vsource.sym} 310 -270 0 0 {name=VDD1 value=5 savecurrent=false}
-C {devices/gnd.sym} 180 -140 0 0 {name=l2 lab=GND}
-C {devices/isource.sym} 180 -340 0 0 {name=Ibias1 value=40u}
-C {devices/gnd.sym} 310 -240 0 0 {name=l3 lab=GND}
-C {devices/lab_wire.sym} 100 -190 0 0 {name=p1 sig_type=std_logic lab=VGS1}
 C {devices/code.sym} -210 50 0 0 {name=cmosedu_models.txt only_toplevel=false value="
 *
 
@@ -390,33 +380,35 @@ C {devices/code.sym} -210 50 0 0 {name=cmosedu_models.txt only_toplevel=false va
 
 +rbps    = 15           rbdb    = 15           rbsb    = 15           ngcon   = 1   
 "}
-C {devices/nmos4.sym} 520 -190 0 0 {name=M2 model=N_1u w=20u l=2u del=0 m=1}
-C {devices/vsource.sym} 670 -270 0 0 {name=VDD2 value=5 savecurrent=false}
-C {devices/gnd.sym} 540 -140 0 0 {name=l5 lab=GND}
-C {devices/gnd.sym} 670 -240 0 0 {name=l6 lab=GND}
-C {devices/lab_wire.sym} 540 -240 0 0 {name=p2 sig_type=std_logic lab=VDS2}
-C {devices/vsource.sym} 420 -160 0 0 {name=V1 value=1 savecurrent=false}
-C {devices/res.sym} 540 -310 0 0 {name=R1
-value=150k
-footprint=1206
-device=resistor
-m=1}
-C {devices/gnd.sym} 420 -130 0 0 {name=l7 lab=GND}
-C {devices/pmos4.sym} 860 -270 0 0 {name=M3 model=P_1u w=30u l=2u del=0 m=2}
-C {devices/isource.sym} 880 -170 0 0 {name=Ibias2 value=40u}
-C {devices/gnd.sym} 880 -120 0 0 {name=l8 lab=GND}
-C {devices/vsource.sym} 970 -310 0 0 {name=VDD3 value=5 savecurrent=false}
-C {devices/gnd.sym} 970 -280 0 0 {name=l9 lab=GND}
-C {devices/lab_wire.sym} 820 -220 0 0 {name=p3 sig_type=std_logic lab=VD3}
-C {devices/pmos4.sym} 1170 -270 0 0 {name=M4 model=P_1u w=30u l=2u del=0 m=1}
-C {devices/gnd.sym} 1190 -120 0 0 {name=l10 lab=GND}
-C {devices/vsource.sym} 1280 -310 0 0 {name=VDD4 value=5 savecurrent=false}
-C {devices/gnd.sym} 1280 -280 0 0 {name=l11 lab=GND}
-C {devices/lab_wire.sym} 1190 -210 0 0 {name=p4 sig_type=std_logic lab=VD4}
-C {devices/res.sym} 1190 -170 0 0 {name=R2
+C {devices/nmos4.sym} 180 -150 0 0 {name=M2 model=N_1u w=20u l=2u del=0 m=1}
+C {devices/vsource.sym} 330 -220 0 0 {name=VDD value=5 savecurrent=false}
+C {devices/gnd.sym} 200 -40 0 0 {name=l5 lab=GND}
+C {devices/gnd.sym} 330 -190 0 0 {name=l6 lab=GND}
+C {devices/lab_wire.sym} 200 -200 0 0 {name=p2 sig_type=std_logic lab=VDS2}
+C {devices/vsource.sym} 80 -120 0 0 {name=V1 value=1 savecurrent=false}
+C {devices/res.sym} 200 -260 0 0 {name=R1
 value=100k
 footprint=1206
 device=resistor
 m=1}
-C {devices/vsource.sym} 1080 -240 0 0 {name=V2 value=3.9 savecurrent=false}
-C {devices/gnd.sym} 1080 -210 0 0 {name=l12 lab=GND}
+C {devices/gnd.sym} 80 -90 0 0 {name=l7 lab=GND}
+C {devices/pmos4.sym} 550 -230 0 0 {name=M4 model=P_1u w=30u l=2u del=0 m=1}
+C {devices/gnd.sym} 570 -40 0 0 {name=l10 lab=GND}
+C {devices/lab_wire.sym} 570 -170 0 0 {name=p4 sig_type=std_logic lab=VD4}
+C {devices/res.sym} 570 -130 0 0 {name=R2
+value=100k
+footprint=1206
+device=resistor
+m=1}
+C {devices/vsource.sym} 460 -200 0 0 {name=V2 value=3.9 savecurrent=false}
+C {devices/gnd.sym} 460 -170 0 0 {name=l12 lab=GND}
+C {devices/isource.sym} 730 -130 0 0 {name=I0 value=1.5u}
+C {devices/gnd.sym} 730 -40 0 0 {name=l1 lab=GND}
+C {devices/gnd.sym} 820 -40 0 0 {name=l2 lab=GND}
+C {devices/lab_wire.sym} 730 -190 0 0 {name=p1 sig_type=std_logic lab=VDS2}
+C {devices/lab_wire.sym} 820 -190 0 0 {name=p3 sig_type=std_logic lab=VD4}
+C {devices/cccs.sym} 820 -130 2 0 {name=F1 vnam=VA1 value=2}
+C {devices/ammeter.sym} 200 -70 0 0 {name=VA2 savecurrent=false}
+C {devices/ammeter.sym} 570 -70 0 0 {name=VA4 savecurrent=false}
+C {devices/ammeter.sym} 730 -70 0 0 {name=VA1 savecurrent=false}
+C {devices/ammeter.sym} 820 -70 0 0 {name=VA3 savecurrent=false}
