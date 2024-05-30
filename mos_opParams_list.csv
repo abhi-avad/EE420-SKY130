@@ -1,0 +1,75 @@
+ac sensitivity wrt width ,sens_w_cplx,2.07615E-05
+sensitivity wrt w of ac phase ,sens_w_ph,2.07615E-05
+sensitivity wrt w of ac magnitude ,sens_w_mag,2.07615E-05
+imag part of ac sensitivity wrt width ,sens_w_imag,2.07615E-05
+real part of ac sensitivity wrt width ,sens_w_real,2.07615E-05
+dc sensitivity wrt width ,sens_w_dc,2.07615E-05
+sensitivity wrt l of ac phase ,sens_l_ph,2.07615E-05
+sensitivity wrt l of ac magnitude ,sens_l_mag,2.07615E-05
+ac sensitivity wrt length ,sens_l_cplx,2.07615E-05
+imag part of ac sensitivity wrt length ,sens_l_imag,2.07615E-05
+real part of ac sensitivity wrt length ,sens_l_real,2.07615E-05
+dc sensitivity wrt length ,sens_l_dc,2.07615E-05
+Instantaneous power ,p,2.07615E-05
+Bulk-Drain charge storage ,qbd,0
+Gate-Bulk charge storage ,qgb,6.69615E-16
+Gate-Drain charge storage ,qgd,0
+Gate-Source charge storage ,qgs,2.0664E-14
+Bulk-Source charge storage ,qbs,0
+Zero-Bias B-S sidewall capacitance ,cbssw0,0
+Zero-Bias B-S junction capacitance ,cbs0,0
+Zero-Bias B-D sidewall capacitance ,cbdsw0,0
+Zero-Bias B-D junction capacitance ,cbd0,0
+Capacitance due to bulk-source charge storage ,cqbs,0
+Capacitance due to bulk-drain charge storage ,cqbd,0
+Capacitance due to gate-bulk charge storage ,cqgb,0
+Capacitance due to gate-drain charge storage ,cqgd,0
+Capacitance due to gate-source charge storage ,cqgs,0
+Gate-Bulk capacitance ,cgb,4.8E-16
+Gate-Drain capacitance ,cgd,1E-15
+Gate-Source capacitance ,cgs,2.86252E-14
+Bulk-Source capacitance ,cbs,0
+Bulk-Drain capacitance ,cbd,0
+Bulk-Source conductance ,gbs,1.38662E-12
+Bulk-Drain conductance ,gbd,1E-12
+Bulk-Source transconductance ,gmb,1.59156E-05
+Drain-Source conductance ,gds,7.27235E-08
+Transconductance ,gm,4.97826E-05
+Drain conductance ,drainconductance,0
+Drain resistance ,rd,0
+Source conductance ,sourceconductance,0
+Source resistance ,rs,0
+Critical drain voltage ,drainvcrit,0.730289
+Critical source voltage ,sourcevcrit,0.730289
+Saturation drain voltage ,vdsat,0.455332
+Turn-on voltage ,von,0.888596
+Number of internal source node ,snodeprime,0
+Number of internal drain node ,dnodeprime,8
+Number of bulk node ,bnode,0
+Number of source node ,snode,0
+Number of gate node ,gnode,8
+Number of drain node ,dnode,8
+Instance temperature difference ,dtemp,0
+Instance operating temperature ,temp,27
+Initial B-S voltage ,icvbs,0
+Initial G-S voltage ,icvgs,0
+Initial D-S voltage ,icvds,0
+Source squares ,nrs,1
+Drain squares ,nrd,1
+Bulk-Drain voltage ,vbd,-1.39503
+Bulk-Source voltage ,vbs,0
+Drain-Source voltage ,vds,1.39503
+Gate-Source voltage ,vgs,1.39503
+Bulk current ,ib,-1.40503E-12
+Gate current ,ig,0
+Source current ,is,-1.48825E-05
+B-S junction current ,ibs,0
+B-D junction current ,ibd,-1.40503E-12
+Drain current ,id,1.48825E-05
+Source perimeter ,ps,0
+Drain perimeter ,pd,0
+Source area ,as,0
+Drain area ,ad,0
+Width ,w,0.000005
+Length ,l,0.000005
+Multiplier ,m,1

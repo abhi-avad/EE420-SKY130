@@ -1,0 +1,4 @@
+show m1		<--- m1 is the device name
+save @m1
+print @m1	<--- all internal parameters of model of m1
+
