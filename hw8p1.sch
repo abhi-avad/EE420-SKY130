@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 B 2 230 20 1030 420 {flags=graph
-y1=-2e-25
-y2=0.0003
+y1=2.9e-19
+y2=3e-06
 ypos1=0
 ypos2=2
 divy=5
@@ -21,6 +21,28 @@ xlabmag=1.0
 ylabmag=1.0
 node="i(vmeas)
 i(vmeas1)"
+color="9 11"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 650 -450 1450 -50 {flags=graph
+y1=-6.9e-08
+y2=4.7
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=5
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="vbiasp
+vbiasn"
 color="9 11"
 dataset=-1
 unitx=1
@@ -71,32 +93,6 @@ N 500 -460 500 -450 {
 lab=VDD}
 N 500 -470 500 -460 {
 lab=VDD}
-N 110 -360 110 -330 {
-lab=VDD}
-N 110 -270 110 -240 {
-lab=#net4}
-N 110 -240 110 -220 {
-lab=#net4}
-N 110 -160 110 -140 {
-lab=GND}
-N 150 -190 160 -190 {
-lab=Vbiasn}
-N 170 -280 170 -240 {
-lab=#net4}
-N 110 -240 170 -240 {
-lab=#net4}
-N 240 -360 240 -330 {
-lab=VDD}
-N 110 -360 240 -360 {
-lab=VDD}
-N 170 -300 200 -300 {
-lab=#net4}
-N 170 -300 170 -280 {
-lab=#net4}
-N 240 -250 310 -250 {
-lab=Vbiasn}
-N 240 -270 240 -250 {
-lab=Vbiasn}
 C {devices/code_shown.sym} 30 50 0 0 {name="SIM COMMANDS" only_toplevel=false value="
 .nodeset all=1.5
 .control
@@ -405,9 +401,9 @@ C {devices/nmos4.sym} 480 -200 0 0 {name=M3 model=N_1u w=10u l=2u del=0 m=1}
 C {devices/nmos4.sym} 330 -200 0 1 {name=M2 model=N_1u w=10u l=2u del=0 m=1}
 C {devices/vsource.sym} -30 -330 0 0 {name=V1 value=5 savecurrent=false}
 C {devices/pmos4.sym} 480 -330 0 0 {name=M1 model=P_1u w=30u l=2u del=0 m=1}
-C {devices/pmos4.sym} 330 -330 0 1 {name=M4 model=P_1u w=30u l=2 del=0 m=4}
+C {devices/pmos4.sym} 330 -330 0 1 {name=M4 model=P_1u w=30u l=2u del=0 m=4}
 C {devices/res.sym} 500 -110 0 0 {name=R1
-value=6.5k
+value=65.0k
 footprint=1206
 device=resistor
 m=1}
@@ -421,17 +417,5 @@ C {devices/lab_wire.sym} 310 -330 0 0 {name=p5 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 500 -330 0 1 {name=p6 sig_type=std_logic lab=VDD}
 C {devices/gnd.sym} 310 -200 1 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 500 -200 3 1 {name=l5 lab=GND}
-C {devices/res.sym} 110 -300 0 0 {name=R2
-value=1M
-footprint=1206
-device=resistor
-m=1}
-C {devices/lab_wire.sym} 160 -190 0 1 {name=p8 sig_type=std_logic lab=Vbiasn}
-C {devices/nmos4.sym} 130 -190 0 1 {name=M5 model=N_1u w=10u l=2u del=0 m=1}
-C {devices/gnd.sym} 110 -140 0 0 {name=l6 lab=GND}
-C {devices/nmos4.sym} 220 -300 0 0 {name=M6 model=N_1u w=10u l=2u del=0 m=1}
-C {devices/lab_wire.sym} 240 -300 0 1 {name=p9 sig_type=std_logic lab=VDD}
-C {devices/vdd.sym} 180 -360 0 0 {name=l7 lab=VDD}
 C {devices/vdd.sym} -30 -380 0 0 {name=l8 lab=VDD}
 C {devices/vdd.sym} 410 -470 0 0 {name=l9 lab=VDD}
-C {devices/lab_wire.sym} 110 -190 0 0 {name=p1 sig_type=std_logic lab=VDD}
