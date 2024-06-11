@@ -5,16 +5,16 @@ K {}
 V {}
 S {}
 E {}
-B 2 230 20 1030 420 {flags=graph
-y1=2.9e-19
-y2=3e-06
+B 2 650 -50 1450 350 {flags=graph
+y1=-5.1e-28
+y2=3.2e-06
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=5
+x2=0.5
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -28,22 +28,23 @@ logx=0
 logy=0
 }
 B 2 650 -450 1450 -50 {flags=graph
-y1=-6.9e-08
-y2=4.7
+y1=-6.8e-22
+y2=5
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=5
+x2=0.5
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="vbiasp
-vbiasn"
-color="9 11"
+vbiasn
+vdd"
+color="9 11 7"
 dataset=-1
 unitx=1
 logx=0
@@ -53,13 +54,13 @@ N -30 -300 -30 -280 {
 lab=GND}
 N -30 -380 -30 -360 {
 lab=VDD}
-N 350 -330 460 -330 {
+N 430 -330 460 -330 {
 lab=Vbiasp}
-N 350 -200 460 -200 {
+N 370 -200 460 -200 {
 lab=Vbiasn}
-N 310 -300 310 -230 {
+N 310 -250 310 -230 {
 lab=Vbiasn}
-N 500 -300 500 -230 {
+N 500 -280 500 -230 {
 lab=Vbiasp}
 N 430 -330 430 -280 {
 lab=Vbiasp}
@@ -75,9 +76,7 @@ N 500 -280 580 -280 {
 lab=Vbiasp}
 N 310 -170 310 -140 {
 lab=GND}
-N 500 -170 500 -150 {
-lab=#net1}
-N 500 -150 500 -140 {
+N 500 -170 500 -140 {
 lab=#net1}
 N 500 -80 500 -60 {
 lab=GND}
@@ -89,16 +88,22 @@ N 310 -390 310 -360 {
 lab=#net2}
 N 500 -390 500 -360 {
 lab=#net3}
-N 500 -460 500 -450 {
+N 500 -470 500 -450 {
 lab=VDD}
-N 500 -470 500 -460 {
-lab=VDD}
-C {devices/code_shown.sym} 30 50 0 0 {name="SIM COMMANDS" only_toplevel=false value="
-*.nodeset all=1.5
+N 350 -330 430 -330 {
+lab=Vbiasp}
+N 500 -300 500 -280 {
+lab=Vbiasp}
+N 350 -200 370 -200 {
+lab=Vbiasn}
+N 310 -300 310 -250 {
+lab=Vbiasn}
+C {devices/code_shown.sym} 40 50 0 0 {name="SIM COMMANDS" only_toplevel=false value="
+**.nodeset all=1.5
 .control
 save all
-dc V1 0 5 1m
-write hw8p1.raw
+tran 1u 500m
+write hw8p2a.raw
 .endc
 "}
 C {devices/gnd.sym} -30 -280 0 0 {name=l1 lab=GND}
@@ -399,11 +404,10 @@ C {devices/code.sym} -210 50 0 0 {name=cmosedu_models.txt only_toplevel=false va
 "}
 C {devices/nmos4.sym} 480 -200 0 0 {name=M3 model=N_1u w=10u l=2u del=0 m=1}
 C {devices/nmos4.sym} 330 -200 0 1 {name=M2 model=N_1u w=10u l=2u del=0 m=1}
-C {devices/vsource.sym} -30 -330 0 0 {name=V1 value=5 savecurrent=false}
 C {devices/pmos4.sym} 480 -330 0 0 {name=M1 model=P_1u w=30u l=2u del=0 m=1}
 C {devices/pmos4.sym} 330 -330 0 1 {name=M4 model=P_1u w=30u l=2u del=0 m=4}
 C {devices/res.sym} 500 -110 0 0 {name=R1
-value=65.0k
+value=65k
 footprint=1206
 device=resistor
 m=1}
@@ -419,3 +423,4 @@ C {devices/gnd.sym} 310 -200 1 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 500 -200 3 1 {name=l5 lab=GND}
 C {devices/vdd.sym} -30 -380 0 0 {name=l8 lab=VDD}
 C {devices/vdd.sym} 410 -470 0 0 {name=l9 lab=VDD}
+C {devices/vsource.sym} -30 -330 0 0 {name=V1 value="pwl(0 0 10m 0 20m 5 100m 5 200m 3 300m 4.5 400m 4 500m 5)" savecurrent=false}

@@ -6,7 +6,7 @@ V {}
 S {}
 E {}
 B 2 230 20 1030 420 {flags=graph
-y1=2.9e-19
+y1=3.4e-13
 y2=3e-06
 ypos1=0
 ypos2=2
@@ -14,36 +14,38 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=5
+x2=6
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="i(vmeas)
-i(vmeas1)"
-color="9 11"
+i(vmeas1)
+i(vmeas2)"
+color="9 11 7"
 dataset=-1
 unitx=1
 logx=0
 logy=0
 }
 B 2 650 -450 1450 -50 {flags=graph
-y1=-6.9e-08
-y2=4.7
+y1=-4e-19
+y2=5.1
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=5
+x2=6
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="vbiasp
-vbiasn"
-color="9 11"
+vbiasn
+vsoftg"
+color="9 11 7"
 dataset=-1
 unitx=1
 logx=0
@@ -53,13 +55,13 @@ N -30 -300 -30 -280 {
 lab=GND}
 N -30 -380 -30 -360 {
 lab=VDD}
-N 350 -330 460 -330 {
+N 430 -330 460 -330 {
 lab=Vbiasp}
-N 350 -200 460 -200 {
+N 370 -200 460 -200 {
 lab=Vbiasn}
-N 310 -300 310 -230 {
+N 310 -250 310 -230 {
 lab=Vbiasn}
-N 500 -300 500 -230 {
+N 500 -280 500 -230 {
 lab=Vbiasp}
 N 430 -330 430 -280 {
 lab=Vbiasp}
@@ -75,9 +77,7 @@ N 500 -280 580 -280 {
 lab=Vbiasp}
 N 310 -170 310 -140 {
 lab=GND}
-N 500 -170 500 -150 {
-lab=#net1}
-N 500 -150 500 -140 {
+N 500 -170 500 -140 {
 lab=#net1}
 N 500 -80 500 -60 {
 lab=GND}
@@ -89,16 +89,58 @@ N 310 -390 310 -360 {
 lab=#net2}
 N 500 -390 500 -360 {
 lab=#net3}
-N 500 -460 500 -450 {
+N 500 -470 500 -450 {
 lab=VDD}
-N 500 -470 500 -460 {
+N 110 -360 110 -340 {
 lab=VDD}
+N 110 -40 110 -20 {
+lab=GND}
+N 150 -70 160 -70 {
+lab=Vbiasn}
+N 240 -360 240 -330 {
+lab=VDD}
+N 240 -250 310 -250 {
+lab=Vbiasn}
+N 240 -270 240 -250 {
+lab=Vbiasn}
+N 350 -330 430 -330 {
+lab=Vbiasp}
+N 500 -300 500 -280 {
+lab=Vbiasp}
+N 350 -200 370 -200 {
+lab=Vbiasn}
+N 310 -300 310 -250 {
+lab=Vbiasn}
+N 110 -110 110 -100 {
+lab=#net4}
+N 180 -300 180 -180 {
+lab=VsoftG}
+N 110 -360 240 -360 {
+lab=VDD}
+N 110 -180 110 -170 {
+lab=VsoftG}
+N 110 -180 180 -180 {
+lab=VsoftG}
+N 180 -300 200 -300 {
+lab=VsoftG}
+N 110 -280 110 -270 {
+lab=#net5}
+N 110 -270 110 -260 {
+lab=#net5}
+N 110 -200 110 -180 {
+lab=VsoftG}
+N 110 -270 150 -270 {
+lab=#net5}
+N 150 -310 150 -270 {
+lab=#net5}
+N 150 -230 150 -180 {
+lab=VsoftG}
 C {devices/code_shown.sym} 30 50 0 0 {name="SIM COMMANDS" only_toplevel=false value="
-*.nodeset all=1.5
+**.nodeset all=1.5
 .control
 save all
-dc V1 0 5 1m
-write hw8p1.raw
+dc V1 0 6 10m
+write hw8p2.raw
 .endc
 "}
 C {devices/gnd.sym} -30 -280 0 0 {name=l1 lab=GND}
@@ -403,7 +445,7 @@ C {devices/vsource.sym} -30 -330 0 0 {name=V1 value=5 savecurrent=false}
 C {devices/pmos4.sym} 480 -330 0 0 {name=M1 model=P_1u w=30u l=2u del=0 m=1}
 C {devices/pmos4.sym} 330 -330 0 1 {name=M4 model=P_1u w=30u l=2u del=0 m=4}
 C {devices/res.sym} 500 -110 0 0 {name=R1
-value=65.0k
+value=65k
 footprint=1206
 device=resistor
 m=1}
@@ -417,5 +459,18 @@ C {devices/lab_wire.sym} 310 -330 0 0 {name=p5 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 500 -330 0 1 {name=p6 sig_type=std_logic lab=VDD}
 C {devices/gnd.sym} 310 -200 1 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 500 -200 3 1 {name=l5 lab=GND}
+C {devices/lab_wire.sym} 160 -70 0 1 {name=p8 sig_type=std_logic lab=Vbiasn}
+C {devices/nmos4.sym} 130 -70 0 1 {name=M5 model=N_1u w=10u l=2u del=0 m=1}
+C {devices/gnd.sym} 110 -20 0 0 {name=l6 lab=GND}
+C {devices/nmos4.sym} 220 -300 0 0 {name=M6 model=N_1u w=10u l=1u del=0 m=1}
+C {devices/vdd.sym} 110 -360 0 0 {name=l7 lab=VDD}
 C {devices/vdd.sym} -30 -380 0 0 {name=l8 lab=VDD}
 C {devices/vdd.sym} 410 -470 0 0 {name=l9 lab=VDD}
+C {devices/ammeter.sym} 110 -140 0 0 {name=Vmeas2 savecurrent=true spice_ignore=0}
+C {devices/gnd.sym} 110 -70 1 0 {name=l10 lab=GND}
+C {devices/gnd.sym} 240 -300 3 1 {name=l11 lab=GND}
+C {devices/lab_wire.sym} 180 -240 0 0 {name=p1 sig_type=std_logic lab=VsoftG}
+C {devices/pmos4.sym} 130 -310 0 1 {name=M7 model=P_1u w=5u l=100u del=0 m=1}
+C {devices/lab_wire.sym} 110 -310 0 0 {name=p2 sig_type=std_logic lab=VDD}
+C {devices/pmos4.sym} 130 -230 0 1 {name=M8 model=P_1u w=5u l=100u del=0 m=1}
+C {devices/lab_wire.sym} 110 -230 0 0 {name=p7 sig_type=std_logic lab=VDD}

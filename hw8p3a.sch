@@ -5,45 +5,54 @@ K {}
 V {}
 S {}
 E {}
+L 4 360 -310 400 -370 {}
+L 4 360 -310 440 -310 {}
+L 4 400 -370 440 -310 {}
+L 4 380 -310 380 -300 {}
+L 4 420 -310 420 -300 {}
+L 4 400 -380 400 -370 {}
 B 2 230 20 1030 420 {flags=graph
-y1=2.9e-19
-y2=3e-06
+y1=-5e-28
+y2=2.9e-06
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=5
+x2=6
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="i(vmeas)
-i(vmeas1)"
-color="9 11"
+i(vmeas1)
+i(e1)"
+color="9 11 7"
 dataset=-1
 unitx=1
 logx=0
 logy=0
 }
 B 2 650 -450 1450 -50 {flags=graph
-y1=-6.9e-08
-y2=4.7
+y1=0
+y2=6
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=5
+x2=6
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="vbiasp
-vbiasn"
-color="9 11"
+vbiasn
+vdd
+vd12"
+color="9 11 7 8"
 dataset=-1
 unitx=1
 logx=0
@@ -53,52 +62,104 @@ N -30 -300 -30 -280 {
 lab=GND}
 N -30 -380 -30 -360 {
 lab=VDD}
-N 350 -330 460 -330 {
-lab=Vbiasp}
-N 350 -200 460 -200 {
+N 370 -200 460 -200 {
 lab=Vbiasn}
-N 310 -300 310 -230 {
+N 310 -250 310 -230 {
 lab=Vbiasn}
-N 500 -300 500 -230 {
-lab=Vbiasp}
-N 430 -330 430 -280 {
-lab=Vbiasp}
-N 430 -280 500 -280 {
-lab=Vbiasp}
 N 370 -250 370 -200 {
 lab=Vbiasn}
 N 310 -250 370 -250 {
 lab=Vbiasn}
 N 370 -250 580 -250 {
 lab=Vbiasn}
-N 500 -280 580 -280 {
-lab=Vbiasp}
 N 310 -170 310 -140 {
 lab=GND}
-N 500 -170 500 -150 {
-lab=#net1}
-N 500 -150 500 -140 {
+N 500 -170 500 -140 {
 lab=#net1}
 N 500 -80 500 -60 {
 lab=GND}
-N 310 -470 500 -470 {
+N 310 -590 500 -590 {
 lab=VDD}
-N 310 -470 310 -450 {
+N 310 -590 310 -570 {
 lab=VDD}
-N 310 -390 310 -360 {
+N 310 -510 310 -480 {
 lab=#net2}
-N 500 -390 500 -360 {
+N 500 -510 500 -480 {
 lab=#net3}
-N 500 -460 500 -450 {
+N 500 -590 500 -570 {
 lab=VDD}
-N 500 -470 500 -460 {
+N 440 -450 460 -450 {
+lab=Vbiasp}
+N 500 -280 500 -230 {
+lab=VD12}
+N 350 -200 370 -200 {
+lab=Vbiasn}
+N 310 -280 310 -250 {
+lab=Vbiasn}
+N 350 -450 400 -450 {
+lab=Vbiasp}
+N 440 -370 580 -370 {
+lab=Vbiasp}
+N 440 -450 440 -370 {
+lab=Vbiasp}
+N 310 -420 310 -280 {
+lab=Vbiasn}
+N 500 -420 500 -280 {
+lab=VD12}
+N 400 -450 440 -450 {
+lab=Vbiasp}
+N -20 -740 -20 -700 {
+lab=#net4}
+N -20 -750 -20 -740 {
+lab=#net4}
+N 20 -780 70 -780 {
+lab=#net4}
+N 40 -780 40 -740 {
+lab=#net4}
+N -20 -740 40 -740 {
+lab=#net4}
+N -20 -820 -20 -810 {
 lab=VDD}
+N -20 -820 110 -820 {
+lab=VDD}
+N 110 -820 110 -810 {
+lab=VDD}
+N 110 -750 110 -700 {
+lab=Vbiasp}
+N 110 -640 110 -620 {
+lab=GND}
+N -20 -620 110 -620 {
+lab=GND}
+N -20 -640 -20 -620 {
+lab=GND}
+N 110 -730 150 -730 {
+lab=Vbiasp}
+N 150 -670 170 -670 {
+lab=Vbiasn}
+N -80 -670 -60 -670 {
+lab=VD12}
+N 380 -300 380 -290 {
+lab=Vbiasn}
+N 420 -300 420 -290 {
+lab=VD12}
+N 480 -290 500 -290 {
+lab=VD12}
+N 310 -290 320 -290 {
+lab=Vbiasn}
+N 400 -450 400 -440 {
+lab=Vbiasp}
+N 400 -440 400 -380 {
+lab=Vbiasp}
+N 320 -290 380 -290 {
+lab=Vbiasn}
+N 420 -290 480 -290 {
+lab=VD12}
 C {devices/code_shown.sym} 30 50 0 0 {name="SIM COMMANDS" only_toplevel=false value="
-*.nodeset all=1.5
+**.nodeset all=1.5
 .control
 save all
-dc V1 0 5 1m
-write hw8p1.raw
+dc V1 0 6 10m
+write hw8p3a.raw
 .endc
 "}
 C {devices/gnd.sym} -30 -280 0 0 {name=l1 lab=GND}
@@ -400,22 +461,36 @@ C {devices/code.sym} -210 50 0 0 {name=cmosedu_models.txt only_toplevel=false va
 C {devices/nmos4.sym} 480 -200 0 0 {name=M3 model=N_1u w=10u l=2u del=0 m=1}
 C {devices/nmos4.sym} 330 -200 0 1 {name=M2 model=N_1u w=10u l=2u del=0 m=1}
 C {devices/vsource.sym} -30 -330 0 0 {name=V1 value=5 savecurrent=false}
-C {devices/pmos4.sym} 480 -330 0 0 {name=M1 model=P_1u w=30u l=2u del=0 m=1}
-C {devices/pmos4.sym} 330 -330 0 1 {name=M4 model=P_1u w=30u l=2u del=0 m=4}
+C {devices/pmos4.sym} 480 -450 0 0 {name=M1 model=P_1u w=30u l=2u del=0 m=1}
+C {devices/pmos4.sym} 330 -450 0 1 {name=M4 model=P_1u w=30u l=2u del=0 m=4}
 C {devices/res.sym} 500 -110 0 0 {name=R1
-value=65.0k
+value=65k
 footprint=1206
 device=resistor
 m=1}
 C {devices/gnd.sym} 310 -140 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} 500 -60 0 0 {name=l3 lab=GND}
-C {devices/lab_wire.sym} 580 -280 0 0 {name=p3 sig_type=std_logic lab=Vbiasp}
+C {devices/lab_wire.sym} 580 -370 0 0 {name=p3 sig_type=std_logic lab=Vbiasp}
 C {devices/lab_wire.sym} 580 -250 0 0 {name=p4 sig_type=std_logic lab=Vbiasn}
-C {devices/ammeter.sym} 310 -420 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
-C {devices/ammeter.sym} 500 -420 0 0 {name=Vmeas1 savecurrent=true spice_ignore=0}
-C {devices/lab_wire.sym} 310 -330 0 0 {name=p5 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 500 -330 0 1 {name=p6 sig_type=std_logic lab=VDD}
+C {devices/ammeter.sym} 310 -540 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
+C {devices/ammeter.sym} 500 -540 0 0 {name=Vmeas1 savecurrent=true spice_ignore=0}
+C {devices/lab_wire.sym} 310 -450 0 0 {name=p5 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 500 -450 0 1 {name=p6 sig_type=std_logic lab=VDD}
 C {devices/gnd.sym} 310 -200 1 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 500 -200 3 1 {name=l5 lab=GND}
 C {devices/vdd.sym} -30 -380 0 0 {name=l8 lab=VDD}
-C {devices/vdd.sym} 410 -470 0 0 {name=l9 lab=VDD}
+C {devices/vdd.sym} 410 -590 0 0 {name=l9 lab=VDD}
+C {devices/lab_wire.sym} 500 -310 0 1 {name=p1 sig_type=std_logic lab=VD12}
+C {devices/nmos4.sym} -40 -670 0 0 {name=M5 model=N_1u w=10u l=2u del=0 m=1}
+C {devices/nmos4.sym} 130 -670 0 1 {name=M6 model=N_1u w=10u l=2u del=0 m=1}
+C {devices/pmos4.sym} 90 -780 0 0 {name=M7 model=P_1u w=100u l=2u del=0 m=1}
+C {devices/pmos4.sym} 0 -780 0 1 {name=M8 model=P_1u w=100u l=2u del=0 m=1}
+C {devices/gnd.sym} 40 -620 0 0 {name=l6 lab=GND}
+C {devices/vdd.sym} 40 -820 0 0 {name=l7 lab=VDD}
+C {devices/lab_wire.sym} -20 -780 0 0 {name=p2 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 110 -780 0 1 {name=p7 sig_type=std_logic lab=VDD}
+C {devices/gnd.sym} 110 -670 1 0 {name=l10 lab=GND}
+C {devices/gnd.sym} -20 -670 3 1 {name=l11 lab=GND}
+C {devices/lab_wire.sym} 150 -730 0 1 {name=p9 sig_type=std_logic lab=Vbiasp}
+C {devices/lab_wire.sym} 170 -670 0 1 {name=p8 sig_type=std_logic lab=Vbiasn}
+C {devices/lab_wire.sym} -80 -670 0 0 {name=p10 sig_type=std_logic lab=VD12}
